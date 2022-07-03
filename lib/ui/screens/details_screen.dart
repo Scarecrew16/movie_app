@@ -109,7 +109,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     style: Theme.of(context).textTheme.caption,
                                   ),
                                   Text(
-                                    "${snapshot.data!.country}",
+                                    "${snapshot.data?.country}",
                                     style:
                                         Theme.of(context).textTheme.subtitle1,
                                   ),
@@ -122,7 +122,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                     style: Theme.of(context).textTheme.caption,
                                   ),
                                   Text(
-                                    "${snapshot.data!.run_time} min",
+                                    "${snapshot.data?.run_time} min",
                                     style:
                                         Theme.of(context).textTheme.subtitle1,
                                   ),
@@ -132,7 +132,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           ),
                           const SizedBox(height: 13.0),
                           Text(
-                            "${snapshot.data!.overview}",
+                            "${snapshot.data?.overview}",
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme

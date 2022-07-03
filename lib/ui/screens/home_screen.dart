@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/api.dart';
 import 'package:movie_app/models/featuredmoviemodel.dart';
 import 'package:movie_app/models/genremodel.dart';
+import 'package:movie_app/ui/screens/video_screen.dart';
 import 'package:movie_app/ui/widgets/homepagefeaturedwidget.dart';
 import 'package:movie_app/ui/widgets/widgets.dart';
+import 'package:movie_app/ui/widgets/drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -27,15 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
+        drawer: NavDrawer(),
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey,
           elevation: 0,
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.search, color: Colors.black), onPressed: () {})
+                icon: Icon(Icons.search, color: Colors.white), onPressed: () {})
           ],
-          leading: IconButton(
-              icon: Icon(Icons.menu, color: Colors.black), onPressed: () {}),
           title: Text(
             "Nesflis",
             style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return ListView.builder(
-                        itemCount: snapshot.data?.length,
+                        itemCount: snapshot.data!.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (ctx, id) {
                           return Container(
@@ -93,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               "${snapshot.data![id].name}",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline4!
+                                  .headline5!
                                   .apply(color: Colors.white),
                             ),
                           );

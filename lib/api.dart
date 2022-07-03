@@ -10,7 +10,7 @@ class Api {
   static const apiKey = "c9592b235278cb33532263e0aa529001";
 
   Future<List<GenreModel>> GetGenreList() async {
-    final response =
+    http.Response response =
         await http.get(Uri.parse("$url/genre/movie/list?api_key=$apiKey"));
 
     if (response.statusCode == 200) {
